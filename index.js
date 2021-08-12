@@ -29,6 +29,10 @@ require('./passport');
 
 app.use(morgan('common'));
 
+// Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
+// by default, you need to set it to false.
+mongoose.set('useFindAndModify', false);
+
 //return a list of ALL movies to the user
 
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
