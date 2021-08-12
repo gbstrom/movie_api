@@ -1,13 +1,14 @@
-//require('dotenv').config();
+require('dotenv').config();
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 
 const Movies = Models.Movie;
 const Users = Models.User;
+const config = require('./config');
 
 const { check, validationResult } = require('express-validator');
 
-mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 //mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const express = require('express'),
@@ -117,7 +118,7 @@ app.post('/users',
             Email: req.body.Email,
             Birthday: req.body.Birthday
           })
-          .then((user) =>{res.status(201).send('You have successfully registered. Details:' + user) })
+          .then((user) =>{res.status(201).send('You have successfully registered. Details:' + user.Username + ' ' + user.Email + ' ' + user.Birthday) })
         .catch((error) => {
           console.error(error);
           res.status(500).send('Error: ' + error);
@@ -170,7 +171,7 @@ app.put('/users/:Username',
       console.error(err);
       res.status(500).send('Error: ' + err);
     } else {
-      res.status(201).send('Your username was changed to ' + updatedUser.Username + '. Details:' + updatedUser);
+      res.status(201).send('Your username was changed to ' + updatedUser.Username);
     }
   });
 });
