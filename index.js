@@ -8,7 +8,7 @@ const config = require('./config');
 
 const { check, validationResult } = require('express-validator');
 
-mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 //mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const express = require('express'),
@@ -146,6 +146,8 @@ app.post('/users',
   (required)
   Birthday: Date
 }*/
+
+//make this refer to users/: and then the userID, not the username
 app.put('/users/:Username',
   [
   check('Username', 'Username is required').isLength({min: 5}),
@@ -161,14 +163,23 @@ app.put('/users/:Username',
   }
 
   let hashedPassword = Users.hashPassword(req.body.Password);
-  Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
-    {
-      Username: req.body.Username,
-      Password: hashedPassword,
-      Email: req.body.Email,
-      Birthday: req.body.Birthday
-    }
-  },
+
+  let updatebj = {};
+
+  if (req.body.Username) {
+    updateOb.Username = req.body.Username
+  }
+  if (req.body.Password) {
+    updateOb.Password = hashedPassword
+  }
+  if (req.body.Email) {
+    updateOb.Email = req.body.Email
+  }
+  if (req.body.Birthday) {
+    updateOb.Birthday = req.body.Birthday
+  }
+
+  Users.findOneAndUpdate({ Username: req.params.Username }, { $set: updateObj },
   { new: true }, // This line makes sure that the updated document is returned
   (err, updatedUser) => {
     if(err) {
