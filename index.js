@@ -192,7 +192,7 @@ app.put('/users/:Username',
 });
 
 // Add a movie to a user's list of favorites. Note that :MovieID needs to be "89eaf..." not "ObjectID(89eaf...)"
-app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), async (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
      $push: { FavoriteMovies: req.params.MovieID }
    },
@@ -202,7 +202,7 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
       console.error(err);
       res.status(500).send('Error: ' + err);
     } else {
-      res.status(201).send('Your favorites have been updated.');
+      //res.status(201).send('Your favorites have been updated.');
       res.json(updatedUser);
     }
   });
@@ -219,7 +219,7 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
       console.error(err);
       res.status(500).send('Error: ' + err);
     } else {
-      res.status(201).send('Your favorites have been updated.');
+      //res.status(201).send('Your favorites have been updated.');
       res.json(updatedUser);
     }
   });
@@ -227,9 +227,10 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
 
 // Return the user's favorites
 app.get('/users/:Username/favorites', passport.authenticate('jwt', {session: false }), (req, res) => {
-  Users.find({ Username: req.params.Username })
+  Users.findOne({ Username: req.params.Username })
     .then((user) => {
-      res.status(201).json(user.FavoriteMovies);
+      console.log(user);
+      res.status(201).json({FavoriteMovies: user.FavoriteMovies});
     })
     .catch((err) => {
       console.error(err);
@@ -253,9 +254,9 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
     });
 });
 
-/*
+
 // Get all users
-app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/users', (req, res) => {
   Users.find()
     .then((users) => {
       res.status(201).json(users);
@@ -266,6 +267,7 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
+/*
 // Get a user by username
 app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOne({ Username: req.params.Username })
