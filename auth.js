@@ -36,7 +36,10 @@ module.exports = (router) => {
         return res.json({ 
           token,
           user: {
-            Username: xss(user.Username)
+            Username: xss(user.Username),
+            FavoriteMovies: user.FavoritMovies,
+            Email: xss(user.Email),
+            Birthday: xss(user.Birthday)
           }
         });
       });
