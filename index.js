@@ -267,9 +267,9 @@ app.get('/users', (req, res) => {
     });
 });
 
-/*
+
 // Get a user by username
-app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/users/:Username', /*passport.authenticate('jwt', { session: false }),*/ (req, res) => {
   Users.findOne({ Username: req.params.Username })
     .then((user) => {
       res.json(user);
@@ -279,7 +279,6 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
       res.status(500).send('Error: ' + err);
     });
 });
-*/
 
 app.use(express.static('public'));
 
