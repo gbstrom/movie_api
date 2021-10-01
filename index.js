@@ -164,19 +164,19 @@ app.put('/users/:Username',
 
   let hashedPassword = Users.hashPassword(req.body.Password);
 
-  let updatebj = {};
+  let updateObj = {};
 
   if (req.body.Username) {
-    updateOb.Username = req.body.Username
+    updateObj.Username = req.body.Username
   }
   if (req.body.Password) {
-    updateOb.Password = hashedPassword
+    updateObj.Password = hashedPassword
   }
   if (req.body.Email) {
-    updateOb.Email = req.body.Email
+    updateObj.Email = req.body.Email
   }
   if (req.body.Birthday) {
-    updateOb.Birthday = req.body.Birthday
+    updateObj.Birthday = req.body.Birthday
   }
 
   Users.findOneAndUpdate({ Username: req.params.Username }, { $set: updateObj },
