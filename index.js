@@ -122,7 +122,7 @@ app.post('/users',
             Email: req.body.Email,
             Birthday: req.body.Birthday
           })
-          .then((user) =>{res.status(201).send('You have successfully registered. Details:' + user.Username + ' ' + user.Email + ' ' + user.Birthday) })
+          .then((user) =>{res.status(201).send(user.Username, user.Email, user.Birthday) })
         .catch((error) => {
           console.error(error);
           res.status(500).send('Error: ' + error);
