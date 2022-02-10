@@ -285,7 +285,7 @@ app.use(express.static('public'));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something didn\'t work!');
+  res.status(500).send('Something didn\'t work! Drat!');
 });
 
 const port = process.env.PORT || 8080;
