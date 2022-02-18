@@ -37,7 +37,7 @@ module.exports = (router) => {
           token,
           user: {
             Username: xss(user.Username),
-            FavoriteMovies: user.FavoritMovies,
+            FavoriteMovies: user.FavoriteMovies,
             Email: xss(user.Email),
             Birthday: xss(user.Birthday)
           }
