@@ -187,7 +187,7 @@ app.put('/users/:Username',
       console.error(err);
       res.status(500).send('Error: ' + err);
     } else {
-      res.status(201).send(updatedUser);
+      res.status(201).send(updatedUser.Username);
     }
   });
 });
