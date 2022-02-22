@@ -181,13 +181,13 @@ app.put('/users/:Username',
   }
 
   Users.findOneAndUpdate({ Username: req.params.Username }, { $set: updateObj },
-  { new: true }, // This line makes sure that the updated document is returned
+  { new: true }, // This line makes sure that the updated document is returned. otherwise the old object is returned because of standard procedure.
   (err, updatedUser) => {
     if(err) {
       console.error(err);
       res.status(500).send('Error: ' + err);
     } else {
-      res.status(201).send(updatedUser.Username);
+      res.status(201).json(updatedUser);
     }
   });
 });
