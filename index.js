@@ -187,7 +187,8 @@ app.put('/users/:Username',
       console.error(err);
       res.status(500).send('Error: ' + err);
     } else {
-      res.status(201).send(json(updatedUser));
+      let jsonifiedUser = json(updatedUser);
+      res.status(201).send(jsonifiedUser);
     }
   });
 });
