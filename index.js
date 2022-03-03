@@ -122,8 +122,8 @@ app.get('/movies/:MovieID', passport.authenticate('jwt', { session: false }), (r
  * @method GET 
  * @param {string} URL - in this case '/movies/genre/:genre'
  * @example '/movies/genre/Thriller'
- * @param {authenticationCallback} 
- * @param {requestCallback}
+ * @param {authCallback} 
+ * @param {reqResCallback}
  * @returns {Array} An array of objects each of which has the genre in the URL as its "Genre" value 
  */
 
@@ -144,8 +144,8 @@ app.get('/movies/genres/:genre', passport.authenticate('jwt', { session: false }
  * @method GET 
  * @param {string} URL - in this case '/movies/director/:name'
  * @example /movies/director/Alfred Hitchcock
- * @param {authenticationCallback} 
- * @param {requestCallback}
+ * @param {authCallback} 
+ * @param {reqResCallback}
  * @returns {Object} An object containing the data about the director whose name is in the URL.
  */
 
@@ -170,7 +170,7 @@ app.get('/directors/:name', passport.authenticate('jwt', { session: false }), (r
  * @param {string} URL - in this case, '/users'
  * @param {array} Array containing Username, Password, Email, Birthday. These are checked to ensure they 
  * are in an appropriate form before the code proceeds.
- * @param {requestCallback}
+ * @param {reqResCallback}
  * @returns {Object} An object containing the new user record with Username, Email, and Birthday.
  */
 
@@ -224,8 +224,8 @@ app.post('/users',
  * @example /users/revisedusername
  * @param {object} Object containing Username, Password, Email, Birthday. These are checked to ensure they 
  * are in an appropriate form before the code proceeds.
- * @param {authenticationCallback}
- * @param {requestCallback}
+ * @param {authCallback}
+ * @param {reqResCallback}
  * @returns {Object} An object containing the updated user record.
  */
 
@@ -280,8 +280,8 @@ app.put('/users/:Username',
  * @method POST
  * @param {string} URL - in this case, '/users/:Username/movies/:MovieID'
  * @example /users/exampleusername/movies/60f1cc137a111c2a24f78e1b
- * @param {authenticationCallback} 
- * @param {requestCallback}
+ * @param {authCallback} 
+ * @param {reqResCallback}
  * @returns {Object} An object with the user information from MongoDB, including the updated favorite movies.
  */
 
@@ -308,8 +308,8 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
  * @method DELETE 
  * @param {string} URL - in this case, '/user/:Username/movies/:MovieID'
  * @example /users/exampleusername/movies/60f1cc137a111c2a24f78e1b
- * @param {authenticationCallback} 
- * @param {requestCallback}
+ * @param {authCallback} 
+ * @param {reqResCallback}
  * @returns {Object} An object with the user information from MongoDB, including the updated favorite movies.
  */
 
@@ -334,8 +334,8 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
  * @method GET 
  * @param {string} URL - in this case, '/users/:Username/favorites'
  * @example /users/exampleusername/favorites
- * @param {authenticationCallback} 
- * @param {requestCallback}
+ * @param {authCallback} 
+ * @param {reqResCallback}
  * @returns {Object} An object with one key - "Movies" - whose value is an array of the IDs of the 
  * user's favorite movies.
  */
@@ -358,8 +358,8 @@ app.get('/users/:Username/favorites', passport.authenticate('jwt', {session: fal
  * @method DELETE
  * @param {string} URL - in thise case, '/users/:Username'
  * @example /users/exampleusername
- * @param {authenticationCallback} 
- * @param {requestCallback}
+ * @param {authCallback} 
+ * @param {reqResCallback}
  * @returns {string} A text message: '[Username] was deleted'.
  */
 // Delete a user by username
@@ -397,8 +397,8 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
  * @method GET 
  * @param {string} URL - in this case, '/users/:Username'
  * @example /users/exampleusername
- * @param {authenticationCallback} 
- * @param {requestCallback}
+ * @param {authCallback} 
+ * @param {reqResCallback}
  * @returns {Object} An object containing the record for the user included in the URL.
  */
 // Get a user by username
