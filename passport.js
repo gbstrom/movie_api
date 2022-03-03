@@ -1,5 +1,5 @@
 /**
- * @file This file implements two passport strategies ("LocalStrategy" and "JWTStrategy") for authenticating
+ * @fileoverview This file implements two passport strategies ("LocalStrategy" and "JWTStrategy") for authenticating
  * requests to API endpoints. LocalStrategy is used when a user logs in. It validates the username and 
  * password against the users collection in MongoDB. JWTStrategy is used for subsequent requests. This 
  * validates the request by decoding the JWT (which the user should have received on a successful login), 
