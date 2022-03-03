@@ -54,6 +54,224 @@
 
 <header>
     
+        <h2>auth.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">The auth file implements the login route for registered users.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="auth.js.html">auth.js</a>, <a href="auth.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:passport</li>
+        
+            <li>module:'./passport.js'</li>
+        
+            <li>module:jsonwebtoken</li>
+        
+            <li>module:xss</li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>index.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">The index.js file creates the Express application, sets up the server, and implements routes to the APIendpoints that are used for accessing, updating & deleting myFlix data. Requests made to API endpoints use mongoose models created in models.js and are authenticated using strategies implemented in passport.js. The connection betweenmongoose and the database is established with the connect method. The database is hosted on MongoDB Atlas, and the server and endpoints are hosted on Heroku at https://cfmovieapp.herokuapp.com/.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:mongoose</li>
+        
+            <li>module:'./models.js'</li>
+        
+            <li>module:express</li>
+        
+            <li>module:morgan</li>
+        
+            <li>module:passport</li>
+        
+            <li>module:'./auth.js'</li>
+        
+            <li>module:cors</li>
+        
+            <li>module:express-validator</li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
         <h2>models.js</h2>
         
     
@@ -148,16 +366,121 @@
 
 
 
+
+
+
+<section>
+
+<header>
+    
+        <h2>passport.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">This file implements two passport strategies ("LocalStrategy" and "JWTStrategy") for authenticatingrequests to API endpoints. LocalStrategy is used when a user logs in. It validates the username and password against the users collection in MongoDB. JWTStrategy is used for subsequent requests. This validates the request by decoding the JWT (which the user should have received on a successful login), then checks the user ID from the payload against the users collection in MongoDB.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="passport.js.html">passport.js</a>, <a href="passport.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:passport</li>
+        
+            <li>module:passport-local</li>
+        
+            <li>module:passport-jwt</li>
+        
+            <li>module:'./models.js'</li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#hashPassword">hashPassword</a></li><li><a href="global.html#Movie">Movie</a></li><li><a href="global.html#movieSchema">movieSchema</a></li><li><a href="global.html#User">User</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#validatePassword">validatePassword</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#auth">auth</a></li><li><a href="global.html#DELETE">DELETE</a></li><li><a href="global.html#generateJWTToken">generateJWTToken</a></li><li><a href="global.html#GET">GET</a></li><li><a href="global.html#hashPassword">hashPassword</a></li><li><a href="global.html#Movie">Movie</a></li><li><a href="global.html#movieSchema">movieSchema</a></li><li><a href="global.html#POST">POST</a></li><li><a href="global.html#PUT">PUT</a></li><li><a href="global.html#User">User</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#validatePassword">validatePassword</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Mar 03 2022 14:04:14 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Mar 03 2022 14:05:58 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
