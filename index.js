@@ -38,9 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require('cors');
 app.use(cors());
 
-/**
- * This is where the POST request to the login endpoint is referred to the auth file for implementation.
- */
+// This is where the POST request to the login endpoint is referred to the auth file for implementation.
 let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
@@ -51,36 +49,28 @@ app.use(morgan('common'));
 // by default, you need to set it to false.
 mongoose.set('useFindAndModify', false);
 
-/**
- * Here begins the sequence of API endpoints.
- */
 
-/**
- * General comments:
- * 
- * HTTP requests in express have three paramaters. The first parameter specifies the endpoint. The second parameter sets 
- * conditions that have to be checked in order for the HTTP request to complete. In HTTP requests to protected endpoints,
- * the second parameter invokes an authentication strategy callback function. (All HTTP requests in this application go 
- * to protected endpoings except for the POST request for registering a new user.) The third parameter is another callback 
- * function, which takes request (req) and response (res) objects as parameters that can be used to access data linked to 
- * the request. If authentication succeeds, the authenticated user is attached to the request (req) object, and the 
- * callback is fired. Thus every endpoint below (except for the endpoint registering new users, which does not need 
- * authentication) will have the following features, at least implicitly:
- * @param {string} URL - The endpoint to which the HTTP method is directed. 
- * @method - The HTTP method used.
- * @callback authCallback
- * @param {string} strategy - the name of the passport strategy used.
- * @callback reqResCallback
- * @param {Object} req - The request object.
- * @param {Object} res - The response object.
- */
+// * Here begins the sequence of API endpoints.
+
+
+
+//  * General comments:
+//  * 
+//  * HTTP requests in express have three paramaters. The first parameter specifies the endpoint. The second parameter sets 
+//  * conditions that have to be checked in order for the HTTP request to complete. In HTTP requests to protected endpoints,
+//  * the second parameter invokes an authentication strategy callback function. (All HTTP requests in this application go 
+//  * to protected endpoings except for the POST request for registering a new user.) The third parameter is another callback 
+//  * function, which takes request (req) and response (res) objects as parameters that can be used to access data linked to 
+//  * the request. If authentication succeeds, the authenticated user is attached to the request (req) object, and the 
+//  * callback is fired.
+
 
 /**
  * GET request to the /movies endpoint, returning all movies in the database.
  * @method GET
  * @param {string} URL - in this case, '/movies'
- * @param {authCallback}
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Array} An array of all the movie records in the database.
  */
 
@@ -101,8 +91,8 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
  * @method GET
  * @param {string} URL - in this case, '/movies/:MovieID
  * @example '/movies/60f1cc137a111c2a24f78e1b'
- * @param {authCallback} 
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Object} An object containing the movie record for the movie whose MovieID is included in the URL. 
  */
 
@@ -122,8 +112,8 @@ app.get('/movies/:MovieID', passport.authenticate('jwt', { session: false }), (r
  * @method GET 
  * @param {string} URL - in this case '/movies/genre/:genre'
  * @example '/movies/genre/Thriller'
- * @param {authCallback} 
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Array} An array of objects each of which has the genre in the URL as its "Genre" value 
  */
 
@@ -144,8 +134,8 @@ app.get('/movies/genres/:genre', passport.authenticate('jwt', { session: false }
  * @method GET 
  * @param {string} URL - in this case '/movies/director/:name'
  * @example /movies/director/Alfred Hitchcock
- * @param {authCallback} 
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Object} An object containing the data about the director whose name is in the URL.
  */
 
@@ -170,7 +160,7 @@ app.get('/directors/:name', passport.authenticate('jwt', { session: false }), (r
  * @param {string} URL - in this case, '/users'
  * @param {array} Array containing Username, Password, Email, Birthday. These are checked to ensure they 
  * are in an appropriate form before the code proceeds.
- * @param {reqResCallback}
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Object} An object containing the new user record with Username, Email, and Birthday.
  */
 
@@ -224,8 +214,8 @@ app.post('/users',
  * @example /users/revisedusername
  * @param {object} Object containing Username, Password, Email, Birthday. These are checked to ensure they 
  * are in an appropriate form before the code proceeds.
- * @param {authCallback}
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Object} An object containing the updated user record.
  */
 
@@ -280,8 +270,8 @@ app.put('/users/:Username',
  * @method POST
  * @param {string} URL - in this case, '/users/:Username/movies/:MovieID'
  * @example /users/exampleusername/movies/60f1cc137a111c2a24f78e1b
- * @param {authCallback} 
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Object} An object with the user information from MongoDB, including the updated favorite movies.
  */
 
@@ -308,8 +298,8 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
  * @method DELETE 
  * @param {string} URL - in this case, '/user/:Username/movies/:MovieID'
  * @example /users/exampleusername/movies/60f1cc137a111c2a24f78e1b
- * @param {authCallback} 
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Object} An object with the user information from MongoDB, including the updated favorite movies.
  */
 
@@ -334,8 +324,8 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
  * @method GET 
  * @param {string} URL - in this case, '/users/:Username/favorites'
  * @example /users/exampleusername/favorites
- * @param {authCallback} 
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Object} An object with one key - "Movies" - whose value is an array of the IDs of the 
  * user's favorite movies.
  */
@@ -358,8 +348,8 @@ app.get('/users/:Username/favorites', passport.authenticate('jwt', {session: fal
  * @method DELETE
  * @param {string} URL - in thise case, '/users/:Username'
  * @example /users/exampleusername
- * @param {authCallback} 
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {string} A text message: '[Username] was deleted'.
  */
 // Delete a user by username
@@ -397,8 +387,8 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
  * @method GET 
  * @param {string} URL - in this case, '/users/:Username'
  * @example /users/exampleusername
- * @param {authCallback} 
- * @param {reqResCallback}
+ * @param {authCallback} function - invokes authentication strategy
+ * @param {reqResCallback} function - uses req & res parameters to access data linked to the request
  * @returns {Object} An object containing the record for the user included in the URL.
  */
 // Get a user by username

@@ -98,75 +98,13 @@
 
         
             
-<h4 class="name" id="auth"><span class="type-signature"></span>auth<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    This is where the POST request to the login endpoint is referred to the auth file for implementation.
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line44">line 44</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
 <h4 class="name" id="Movie"><span class="type-signature"></span>Movie<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    This creates a model for the movies database collection using the movieSchema
+    This is a model for the movies database collection using the movieSchema
 </div>
 
 
@@ -222,137 +160,13 @@
 
         
             
-<h4 class="name" id="Movie"><span class="type-signature"></span>Movie<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    This exports the Movie and User models for use elsewhere in the application
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models.js.html">models.js</a>, <a href="models.js.html#line68">line 68</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="movieSchema"><span class="type-signature"></span>movieSchema<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    This is the schema for the movies collection
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models.js.html">models.js</a>, <a href="models.js.html#line14">line 14</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
 <h4 class="name" id="User"><span class="type-signature"></span>User<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    This creates a model for the users database collection using the userSchema
+    This is a model for the users database collection using the userSchema
 </div>
 
 
@@ -407,68 +221,6 @@
 
 
         
-            
-<h4 class="name" id="userSchema"><span class="type-signature"></span>userSchema<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    This is the schema for the users collection
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models.js.html">models.js</a>, <a href="models.js.html#line31">line 31</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
     
 
     
@@ -480,7 +232,7 @@
     
 
     
-    <h4 class="name" id="DELETE"><span class="type-signature"></span>DELETE<span class="signature">(URL)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="DELETE"><span class="type-signature"></span>DELETE<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -547,7 +299,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -563,20 +315,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -586,7 +338,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -627,7 +379,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line305">line 305</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line295">line 295</a>
     </li></ul></dd>
     
 
@@ -690,7 +442,7 @@
     
 
     
-    <h4 class="name" id="DELETE"><span class="type-signature"></span>DELETE<span class="signature">(URL)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="DELETE"><span class="type-signature"></span>DELETE<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -757,7 +509,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -773,20 +525,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -796,7 +548,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -837,7 +589,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line356">line 356</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line346">line 346</a>
     </li></ul></dd>
     
 
@@ -1059,7 +811,7 @@
     
 
     
-    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1126,7 +878,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -1142,20 +894,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -1165,7 +917,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -1206,7 +958,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line78">line 78</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
@@ -1264,7 +1016,7 @@
     
 
     
-    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -1331,7 +1083,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -1347,20 +1099,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -1370,7 +1122,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -1411,7 +1163,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line98">line 98</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -1474,7 +1226,7 @@
     
 
     
-    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1541,7 +1293,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -1557,20 +1309,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -1580,7 +1332,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -1621,7 +1373,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line120">line 120</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line110">line 110</a>
     </li></ul></dd>
     
 
@@ -1684,7 +1436,7 @@
     
 
     
-    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -1751,7 +1503,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -1767,20 +1519,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -1790,7 +1542,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -1831,7 +1583,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line141">line 141</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line131">line 131</a>
     </li></ul></dd>
     
 
@@ -1894,7 +1646,7 @@
     
 
     
-    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -1961,7 +1713,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -1977,20 +1729,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -2000,7 +1752,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -2041,7 +1793,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line332">line 332</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line322">line 322</a>
     </li></ul></dd>
     
 
@@ -2104,7 +1856,7 @@
     
 
     
-    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="GET"><span class="type-signature"></span>GET<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -2171,7 +1923,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -2187,20 +1939,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -2210,7 +1962,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -2251,7 +2003,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line395">line 395</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line385">line 385</a>
     </li></ul></dd>
     
 
@@ -2473,7 +2225,7 @@
     
 
     
-    <h4 class="name" id="POST"><span class="type-signature"></span>POST<span class="signature">(URL, Array)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="POST"><span class="type-signature"></span>POST<span class="signature">(URL, Array, function)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -2563,13 +2315,13 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -2579,7 +2331,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -2620,7 +2372,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line163">line 163</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line153">line 153</a>
     </li></ul></dd>
     
 
@@ -2678,7 +2430,7 @@
     
 
     
-    <h4 class="name" id="POST"><span class="type-signature"></span>POST<span class="signature">(URL)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="POST"><span class="type-signature"></span>POST<span class="signature">(URL, function, function)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -2745,7 +2497,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -2761,20 +2513,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -2784,7 +2536,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -2825,7 +2577,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line277">line 277</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line267">line 267</a>
     </li></ul></dd>
     
 
@@ -2888,7 +2640,7 @@
     
 
     
-    <h4 class="name" id="PUT"><span class="type-signature"></span>PUT<span class="signature">(URL, Object)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="PUT"><span class="type-signature"></span>PUT<span class="signature">(URL, Object, function, function)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -2978,7 +2730,7 @@
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
@@ -2994,20 +2746,20 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">invokes authentication strategy</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code></code></td>
+                <td class="name"><code>function</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#reqResCallback">reqResCallback</a></span>
+<span class="param-type">reqResCallback</span>
 
 
             
@@ -3017,7 +2769,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">uses req & res parameters to access data linked to the request</td>
         </tr>
 
     
@@ -3058,7 +2810,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line218">line 218</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line208">line 208</a>
     </li></ul></dd>
     
 
@@ -3278,216 +3030,6 @@
     
 
     
-        <h3 class="subsection-title">Type Definitions</h3>
-
-        
-                
-
-    
-
-    
-    <h4 class="name" id="reqResCallback"><span class="type-signature"></span>reqResCallback<span class="signature">(URL, strategy, req, res)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    General comments:HTTP requests in express have three paramaters. The first parameter specifies the endpoint. The second parameter sets conditions that have to be checked in order for the HTTP request to complete. In HTTP requests to protected endpoints,the second parameter invokes an authentication strategy callback function. (All HTTP requests in this application go to protected endpoings except for the POST request for registering a new user.) The third parameter is another callback function, which takes request (req) and response (res) objects as parameters that can be used to access data linked to the request. If authentication succeeds, the authenticated user is attached to the request (req) object, and the callback is fired. Thus every endpoint below (except for the endpoint registering new users, which does not need authentication) will have the following features, at least implicitly:
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>URL</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The endpoint to which the HTTP method is directed.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>strategy</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the name of the passport strategy used.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>req</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The request object.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>res</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The response object.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line58">line 58</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-    
 
     
 </article>
@@ -3500,13 +3042,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#auth">auth</a></li><li><a href="global.html#DELETE">DELETE</a></li><li><a href="global.html#generateJWTToken">generateJWTToken</a></li><li><a href="global.html#GET">GET</a></li><li><a href="global.html#hashPassword">hashPassword</a></li><li><a href="global.html#Movie">Movie</a></li><li><a href="global.html#movieSchema">movieSchema</a></li><li><a href="global.html#POST">POST</a></li><li><a href="global.html#PUT">PUT</a></li><li><a href="global.html#User">User</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#validatePassword">validatePassword</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#DELETE">DELETE</a></li><li><a href="global.html#generateJWTToken">generateJWTToken</a></li><li><a href="global.html#GET">GET</a></li><li><a href="global.html#hashPassword">hashPassword</a></li><li><a href="global.html#Movie">Movie</a></li><li><a href="global.html#POST">POST</a></li><li><a href="global.html#PUT">PUT</a></li><li><a href="global.html#User">User</a></li><li><a href="global.html#validatePassword">validatePassword</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Mar 03 2022 14:31:49 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Mar 04 2022 09:44:46 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

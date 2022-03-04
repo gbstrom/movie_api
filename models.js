@@ -10,7 +10,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-/** This is the schema for the movies collection */
+// This is the schema for the movies collection
 let movieSchema = mongoose.Schema({
   Title: {type: String, required: true},
   Description: {type: String, required: true},
@@ -27,7 +27,7 @@ let movieSchema = mongoose.Schema({
   Featured: Boolean
 });
 
-/** This is the schema for the users collection */
+// This is the schema for the users collection
 let userSchema = mongoose.Schema({
   Username: {type: String, required: true},
   Password: {type: String, required: true},
@@ -59,12 +59,12 @@ userSchema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.Password);
 };
 
-/** This creates a model for the movies database collection using the movieSchema */
+/** This is a model for the movies database collection using the movieSchema */
 let Movie = mongoose.model('Movie', movieSchema);
-/** This creates a model for the users database collection using the userSchema */
+/** This is a model for the users database collection using the userSchema */
 let User = mongoose.model('User', userSchema);
 
-/** This exports the Movie and User models for use elsewhere in the application */
+// This exports the Movie and User models for use elsewhere in the application
 module.exports.Movie = Movie;
 module.exports.User = User;
 
